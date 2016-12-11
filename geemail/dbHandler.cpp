@@ -13,6 +13,14 @@
 
 using namespace std;
 
+class message{
+public:
+    std::string To;
+    std::string From;
+    std::string Message;
+    std::string Salt;
+};
+
 
 struct A{
     string b;

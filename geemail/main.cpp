@@ -89,19 +89,10 @@ void readAMessage(string Username){
         cin >> user;
         //cin.get();
     }
-    char ch; //hey i think i had something that might've been working here
-            //I also fixed send a message so that it can be more than one word
-            //cin on its own didn't like the spaces...and it successfully
-            //decrypted too although even though it was just working now there are
-            //weird double enters ness for cin?? but before that the only thing
-            //that was bothering me was that the menu doesn't come back up after
-            //you send/read
+    char ch;
     //flush buffer
     while ((ch = getchar()) != '\n' && ch != EOF);
     message Mess = getRecentMessage(Username, user);
-    //cin.get();
-    //cin.get();
-    //cin.get();
     string password = getpass("Password: ",true);
     string hash = hashFor(password, Mess.Salt,100000);
     Mess.Message = decrypt(hash, Mess.Salt, Mess.Message);
@@ -202,18 +193,7 @@ int main(int argc, char **argv){
             }
             cout << "Good bye!" << endl;
             system("clear");            
-            //out << "Log in or Create Account?" << endl;
-            
-            // cout << "Username: ";
-            // cin >> Username;
-            // if userExists(Username)
-            // password=getpass("Password: ",true);
-            // PasswordHash = hashIt(password)
-            
-            //Password.set("test");
-            //out << Password.get() << endl;
-            //Password->string_ = "Passw0rd";
-            //cout << "Password: " << Password->get() << endl;
+ 
             
         } catch (invalid_argument const &e){
             cout << "Argument Error: " << e.what() << endl;
