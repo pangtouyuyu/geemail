@@ -6,8 +6,6 @@
 #include <exception>
 #include <stdexcept>  
 
-#include "message.cpp"
-
 #define UsersTable "users"
 #define MessagesTable "messages"
 
